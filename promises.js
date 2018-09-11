@@ -24,3 +24,9 @@ function createUsers(users) {
 }
 
 // Votre code ici (8 lignes)
+      getUsers()
+        .then(
+          (users) => Promise.all(createUsers(users))
+            .then(allDisplayed)
+        );
+      function allDisplayed(message){console.log('ALL IS ADDED')}
